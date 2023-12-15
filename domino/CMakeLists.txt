@@ -1,0 +1,1 @@
+add_library(domino domino.h domino.cpp)
