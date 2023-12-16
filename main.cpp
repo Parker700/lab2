@@ -4,8 +4,7 @@
 #include "functions.h"
 int main()
 {
-    using namespace std;
     using namespace domino;
-
+    Dominos dominos(3);
     return 0;
 }

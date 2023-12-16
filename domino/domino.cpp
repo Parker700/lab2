@@ -1,8 +1,7 @@
+#include <iostream>
 #include "domino.h"
 #include <limits>
-#include <iostream>
-#include <cmath>
-#include <cstdlib>
+#include <random>
 
 //#include <ctime>
 using namespace std;
@@ -25,10 +24,15 @@ namespace domino {//namespace domino opened
             }
         }
     }
+    int random(){
+        random_device rd;   // non-deterministic generator
+        mt19937 gen(rd());
+        uniform_int_distribution<> dist(0,7);
+        return dist(gen);
+    }
     Domino::Domino() {
-        srand(static_cast<unsigned int>(time(nullptr)));
-        left = rand() % 7; // Random value between 0 and 6
-        right = rand() % 7; // Random value between 0 and 6
+        left = random();
+        right = random();
     }
     Domino::Domino(int v1, int v2) : left(v1), right(v2) {}
     void Domino::print(){
@@ -66,6 +70,11 @@ namespace domino {//namespace domino opened
         temp = left;
         left = right;
         right = temp;
+        return *this;
+    }
+    Domino& Domino::operator= (const Domino& domino){
+        left = domino.left;
+        right = domino.right;
         return *this;
     }
     void Domino::printAscii(){
