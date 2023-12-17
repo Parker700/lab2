@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #ffefe3;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" width="300" height="300"/>
+  <g>
+    <rect class="cls-4" x="92.5" y="32.5" width="115" height="235" rx="16.85" ry="16.85"/>
+    <path d="m190.65,35c7.92,0,14.35,6.44,14.35,14.35v201.29c0,7.92-6.44,14.35-14.35,14.35h-81.29c-7.92,0-14.35-6.44-14.35-14.35V49.35c0-7.92,6.44-14.35,14.35-14.35h81.29m0-5h-81.29c-10.69,0-19.35,8.67-19.35,19.35v201.29c0,10.69,8.67,19.35,19.35,19.35h81.29c10.69,0,19.35-8.67,19.35-19.35V49.35c0-10.69-8.67-19.35-19.35-19.35h0Z"/>
+  </g>
+  <line class="cls-2" x1="102.5" y1="150.5" x2="198.5" y2="150.5"/>
+  <circle class="cls-1" cx="149.5" cy="91.5" r="9"/>
+  <g>
+    <circle class="cls-1" cx="178.5" cy="244.5" r="9"/>
+    <circle class="cls-1" cx="178.5" cy="210.5" r="9"/>
+    <circle class="cls-1" cx="178.5" cy="176.5" r="9"/>
+  </g>
+  <g>
+    <circle class="cls-1" cx="120.5" cy="244.5" r="9"/>
+    <circle class="cls-1" cx="120.5" cy="210.5" r="9"/>
+    <circle class="cls-1" cx="120.5" cy="176.5" r="9"/>
+  </g>
+</svg>

@@ -39,15 +39,19 @@ namespace domino {//namespace domino opened
         cout << "[" << left << " : " << right << "]\n";
     }
 
-    int Domino::getleft() const{
+    int Domino::gerLeft() const{
         return left;
     }
-    int Domino::getright() const{
+    int Domino::gerRight() const{
         return right;
     }
+    void Domino::random_change(){
+        left = random();
+        right = random();
+    }
     int operator== (const Domino& domino1, const Domino& domino2){
-        int first = domino1.getleft() + domino1.getright();
-        int second = domino2.getleft() + domino2.getright();
+        int first = domino1.gerLeft() + domino1.gerRight();
+        int second = domino2.gerLeft() + domino2.gerRight();
         if(first > second){
             return 1;
         }else if(first < second){
@@ -168,7 +172,15 @@ namespace domino {//namespace domino opened
         cout << " |\n";//bottom level ends
         cout << " - - - - - - - - -\n";
     }//method that prints in ascii art
-    //class Dominos
+    //class Dominoes
+    std::ostream& operator<< (std::ostream& out, const Dominoes& Dominoes){
+        out << "Your dominoes:";
+        for(int i = 0; i < Dominoes.size; i++){
+            out << "\n" << Dominoes.arr[i];
+        }
+        return out;
+    }
+
 
 }//namespace domino closed
 
