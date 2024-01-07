@@ -2,7 +2,6 @@
 #include "domino.h"
 #include <limits>
 #include <random>
-
 //#include <ctime>
 using namespace std;
 namespace domino {//namespace domino opened
@@ -172,15 +171,71 @@ namespace domino {//namespace domino opened
         cout << " |\n";//bottom level ends
         cout << " - - - - - - - - -\n";
     }//method that prints in ascii art
+
+
+
+
+
+
+
+
+
+
+
     //class Dominoes
+    void Dominoes::addDomino(Domino& domino){
+        this->size++;
+        Domino *temp = new Domino[this->size];
+        std::copy(this->arr, this->arr + this->size, temp);
+        temp[this->size - 1] = domino;
+        delete [] this->arr;
+        this->arr = temp;
+        delete [] temp;
+    }
+    void Dominoes::delDomino(int ind){
+        this->size--;
+        Domino *temp = new Domino[this->size];
+        std::copy(this->arr, this->arr + ind, temp);
+        std::copy(this->arr + ind + 1, this->arr + this->size - 1, temp);
+        delete [] this->arr;
+        this->arr = temp;
+        delete [] temp;
+    }
+    void Dominoes::sort(){
+        if(this->size != 0) {
+            Domino temp;
+            int comp;
+            int ind;
+            for(int j = 0; j < this->size; j++) {
+                temp = this->arr[j];
+                ind = j;
+                for (int i = j; i < this->size; i++) {
+                    comp = temp == this->arr[i];
+                    if (comp == 1) {
+                        temp = this->arr[i];
+                        ind = i;
+                    }
+                }
+                this->arr[ind] = this->arr[j];
+                this->arr[j] = temp;
+            }
+        }
+    }//sort domino
     std::ostream& operator<< (std::ostream& out, const Dominoes& Dominoes){
         out << "Your dominoes:";
         for(int i = 0; i < Dominoes.size; i++){
             out << "\n" << Dominoes.arr[i];
         }
+        out << Dominoes.size;
+        out << "\n";
         return out;
     }
-
-
+    Dominoes& Dominoes::operator+= (const Domino& domino){
+        Domino *temp = new Domino[this->size];
+        std::copy(this->arr, this->arr + 1, temp);
+        this->size++;
+        this->arr[this->size - 1] = domino;
+        return *this;
+    }
 }//namespace domino closed
 

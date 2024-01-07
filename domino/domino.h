@@ -39,7 +39,11 @@ namespace domino {
                 domino.random_change();
             }
         }
-        friend std::ostream& operator<< (std::ostream& out, const Dominoes& Dominoes);
+        void addDomino(Domino& domino);
+        void delDomino(int ind);
+        void sort();
+        Dominoes& operator+= (const Domino& domino);//add one domino
+        friend std::ostream& operator<< (std::ostream& out, const Dominoes& Dominoes);//output to ostream
     };
 }
 #endif //LAB2_DOMINO_H
