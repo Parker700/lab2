@@ -8,6 +8,14 @@ int main()
     int command;
     int number;
     Dominoes MyDom;
+
+/*    Dominoes dom1(3);
+    std::cout << dom1;
+    Domino d(4, 6);
+    std::cout << std::endl << d << std::endl;
+    dom1 += d;
+    std::cout << dom1;*/
+
     try {
         while(true) {
             std::cout << "1. Create random dominoes\n"
@@ -25,7 +33,7 @@ int main()
                     }
                     case 2: {
                         std::cout << "Let's create our own custom dominoes:\n";
-                        Dominoes Temp(getvalue(0, 30), getvalue(0, 30), getvalue(0, 30), getvalue(0, 30), getvalue(0, 30), getvalue(0, 30), getvalue(0, 30));
+                        Dominoes Temp(getvalue(0, 10), 0);
                         MyDom = Temp;
                         MyDom.sort();
                         break;
@@ -59,7 +67,8 @@ int main()
                         {
                             Domino temp(getvalue(0, 6), getvalue(0, 6));
                             ~temp;
-                            MyDom.addDomino(temp);
+//                            MyDom.addDomino(temp);
+                            MyDom += temp;
                             break;
                         }
                         case 4://select a group of dominoes
@@ -70,7 +79,7 @@ int main()
                         }
                         case 5://del random
                         {
-                            MyDom.deletion();
+                            MyDom.delRandom();
                             break;
                         }
                         case 6:// del custom
